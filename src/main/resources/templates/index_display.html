@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>INTC-3283 - Data Display</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.js}"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Welcome to INTC-3283; Introduction to Data Management</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Date of Birth</th>
+                <th>Share Data?</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="entry : ${entries}">
+                <td th:text="${entry.getId()}">#</td>
+                <td th:text="${entry.getName()}">NAME</td>
+                <td th:text="${entry.getEmail()}">@</td>
+                <td th:text="${entry.getUsername}">USERNAME</td>
+                <td th:text="${entry.getDateOfBirth()}">mm/dd/yyyy</td>
+                <td th:text="${entry.isShareData()}">YES / NO</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>
