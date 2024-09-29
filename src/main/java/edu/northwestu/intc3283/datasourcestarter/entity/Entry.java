@@ -9,6 +9,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.validation.annotation.Validated;
 import java.time.Instant;
 
+
 @Table("entries")
 @Validated
 public class Entry {
